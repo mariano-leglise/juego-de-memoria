@@ -1,0 +1,53 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  background-color: gray; 
+  font-family: 'Comic Sans MS', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #000000; 
+  text-align: center; 
+
+}
+
+.juego-memoria {
+  display: flex;
+  flex-wrap: wrap; /* Para que las cartas se acomoden en varias filas */
+  width: 400px; /* Tamaño del tablero de juego */
+  gap: 10px; /* Espacio entre las cartas */
+}
+
+.tarjeta-memoria {
+  width: 90px; /* Tamaño de cada carta */
+  height: 120px;
+  position: relative;
+  cursor: pointer; /* Para que el cursor cambie cuando pasas por encima */
+  transform-style: preserve-3d; /* Para que las cartas se volteen en 3D */
+  transition: transform 0.5s; /* Tiempo que tarda en voltear */
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+ 
+}
+
+.tarjeta-memoria.volteada {
+  transform: rotateY(180deg); /* Voltea la carta cuando es clickeada */
+}
+
+.tarjeta-memoria img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Oculta el reverso cuando está volteada */
+  border-radius: 10px;
+}
+
+.cara-frontal {
+  transform: rotateY(180deg); /* Mantiene oculta la cara frontal hasta que se voltee */
+}
